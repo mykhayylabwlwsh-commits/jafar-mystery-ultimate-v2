@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#060a16">
+<title>JAFAR MYSTERY — Ultimate</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="logo">✥</div><div><h1>مغامرات الغموض</h1><span>JAFAR MYSTERY · ULTIMATE</span></div></div>
+  <div class="top-stats">
+    <div class="stat"><small>المرحلة</small><b id="stageLabel">1 / 10</b></div>
+    <div class="stat"><small>البلورات</small><b id="crystalLabel">0 / 5</b></div>
+    <div class="stat hearts"><small>القلوب</small><b id="livesLabel">♥ ♥ ♥</b></div>
+    <div class="stat"><small>النقاط</small><b id="scoreLabel">0</b></div>
+    <button id="soundBtn" class="ui-btn">🔊 الصوت</button>
+    <button id="pauseBtn" class="ui-btn">Ⅱ إيقاف</button>
+  </div>
+</header>
+<main class="layout">
+<aside class="panel left-panel">
+  <h3>اختَر بطلك</h3>
+  <div class="heroes" id="heroChoices">
+    <button class="hero-choice selected" data-hero="jafar"><span class="portrait p1">♟</span><b>جعفر</b><small>متوازن</small></button>
+    <button class="hero-choice" data-hero="layla"><span class="portrait p2">✦</span><b>ليلى</b><small>سريعة</small></button>
+    <button class="hero-choice" data-hero="omar"><span class="portrait p3">➤</span><b>عمر</b><small>ضرر أعلى</small></button>
+    <button class="hero-choice" data-hero="sara"><span class="portrait p4">❋</span><b>سارة</b><small>اندفاع أقوى</small></button>
+  </div>
+  <div class="panel-inner"><h3>🎯 المهمة</h3><p id="mission">اجمع البلورات وافتح البوابة.</p><div class="progress"><span id="progressFill"></span></div><small id="progressText">0%</small></div>
+  <div class="panel-inner"><h3>🎮 التحكم</h3><p><kbd>W A S D</kbd> أو الأسهم: حركة</p><p><kbd>Space</kbd>: إطلاق النار</p><p><kbd>Shift</kbd>: اندفاع</p><p><kbd>1 / 2 / 3</kbd>: تبديل السلاح</p><p><kbd>P</kbd>: إيقاف مؤقت</p></div>
+  <button id="restartBtn" class="wide secondary">↻ إعادة المرحلة</button>
+  <button id="saveBtn" class="wide secondary">💾 حفظ التقدم</button>
+</aside>
+<section class="game-panel panel">
+  <div class="game-title"><div><small>العالم الحالي</small><h2 id="stageName">الغابة الغامضة</h2></div><div class="boss-mini hidden" id="bossMini"><span>👹 سورة الوحش</span><div class="boss-track"><i id="bossMiniFill"></i></div></div></div>
+  <div class="canvas-wrap">
+    <canvas id="game" width="960" height="600" aria-label="ساحة اللعبة"></canvas>
+    <div class="overlay" id="overlay"><div class="overlay-card"><div class="overlay-emblem" id="overlayIcon">✥</div><h2 id="overlayTitle">مستعد للمغامرة؟</h2><p id="overlayText">اجمع البلورات، تجنّب الحراس، وافتح البوابة. في المرحلة العاشرة ينتظرك الوحش الأخير!</p><button id="startBtn" class="primary">ابدأ المغامرة</button></div></div>
+  </div>
+  <div class="mobile-controls">
+    <div class="dpad"><button data-key="ArrowUp">▲</button><div><button data-key="ArrowLeft">◀</button><button data-key="ArrowDown">▼</button><button data-key="ArrowRight">▶</button></div></div>
+    <div class="mobile-actions"><button data-key="Space" class="fire-btn">✦ إطلاق</button><button data-key="Shift">⚡ اندفاع</button></div>
+  </div>
+  <div class="game-foot"><span>✦ اجمع البلورات لفتح الطريق</span><span id="statusText">جاهز للمغامرة</span></div>
+</section>
+<aside class="panel right-panel">
+  <h3>خريطة المراحل</h3><div class="stage-list" id="stageList"></div>
+  <div class="weapon-card"><div class="weapon-icon" id="weaponIcon">⚡</div><div><b id="weaponName">نبضة الطاقة</b><small id="weaponDesc">سلاح متوازن</small></div><button id="weaponBtn" class="ui-btn">تبديل</button></div>
+  <div class="panel-inner stats-box"><h3>📊 إحصائيات</h3><p>الأعداء المهزومون <b id="killsLabel">0</b></p><p>أفضل نتيجة <b id="bestLabel">0</b></p></div>
+  <div class="tip"><b>💡 تلميحة</b><p id="tipText">تحرّك باستمرار ولا تسمح للحراس بمحاصرتك.</p></div>
+</aside>
+</main>
+<footer>JAFAR TOOLS · مغامرة متصفح مستقلة · تقدمك يُحفظ على هذا الجهاز</footer>
+</div>
+<script src="game.js"></script>
+</body></html>
